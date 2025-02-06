@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Odisha</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+        .canvas-container {
+            margin-top: 20px;
+        }
+        footer {
+            background: black;
+            color: white;
+            padding: 10px;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Odisha</h1>
+    </header>
+
+    <div class="content">
+        <h2>About Odisha</h2>
+        <p>Odisha, located on the eastern coast of India, is known for its rich cultural heritage, beautiful temples, and scenic landscapes. The famous Jagannath Temple in Puri and the Konark Sun Temple are major attractions.</p>
+
+        <h3>Major Attractions:</h3>
+        <ul>
+            <li>Puri Jagannath Temple</li>
+            <li>Konark Sun Temple</li>
+            <li>Chilika Lake</li>
+            <li>Simlipal National Park</li>
+            <li>Udayagiri & Khandagiri Caves</li>
+        </ul>
+
+        
+        <div class="canvas-container">
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+        </div>
+
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(95,50,40,0,2*Math.PI);
+            ctx.stroke();
+        </script>
+
+        
+        
+    </div>
+
+    <footer>
+        <p>2025 Odisha Tourism | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

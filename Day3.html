@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Page</title>
+    <style>
+        body {
+            background-image: url('./240_F_66666533_vxomGRXUe1PGDjuOZQMwocqRPysfbjqN.jpg'); 
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        
+        header {
+            background: purple;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        
+        nav {
+            background: rgba(0, 0, 0, 0.952);
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        
+        .media-container {
+            margin-top: 50px;
+        }
+
+        .custom-controls {
+            margin-top: 10px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        
+        .video-container {
+            width: 600px;
+            height: 350px;
+            margin: auto;
+            overflow: hidden;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <h1>Custom Audio & Video Player</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="odisha.html">Home</a></li>
+            <li><a href="#audio-player">Audio</a></li>
+            <li><a href="#video-player">Video</a></li>
+        </ul>
+    </nav>
+
+    <!-- Audio Section -->
+    <div class="media-container" id="audio-player">
+        <h2>Audio Player</h2>
+        <audio id="audio" controls>
+            <source src="./WhatsApp Audio 2025-02-06 at 10.05.50_27a48052.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="custom-controls">
+            <button onclick="document.getElementById('audio').play()">Play</button>
+            <button onclick="document.getElementById('audio').pause()">Pause</button>
+            <button onclick="document.getElementById('audio').currentTime = 0">Restart</button>
+        </div>
+        <p><a href="./WhatsApp Audio 2025-02-06 at 10.05.50_27a48052.mp3" target="_blank">Download Audio</a></p>
+    </div>
+    
+    <!-- Video Section -->
+    <div class="media-container" id="video-player">
+        <h2>Video Player</h2>
+        <div class="video-container">
+            <video id="video" controls>
+                <source src="./WhatsApp Video 2025-02-06 at 10.06.15_dfb0580a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="custom-controls">
+            <button onclick="document.getElementById('video').play()">Play</button>
+            <button onclick="document.getElementById('video').pause()">Pause</button>
+            <button onclick="document.getElementById('video').currentTime = 0">Restart</button>
+        </div>
+        <p><a href="./WhatsApp Video 2025-02-06 at 10.06.15_dfb0580a.mp4" target="_blank">Download Video</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p> 2025 Media Page | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
