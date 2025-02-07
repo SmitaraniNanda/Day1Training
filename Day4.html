@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites - Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('./src/asset/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white; /* Makes text readable on background */
+        }
+        header {
+            background-color: rgba(255, 102, 0, 0.9); /* Semi-transparent background */
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #ff6600;
+        }
+        .menu, .reservation {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            color: black; /* Ensures readability */
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        .menu-item div {
+            text-align: left;
+            flex: 1;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff6600;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc5500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Welcome to Delicious Bites 
+    </header>
+
+    <nav>
+        <a href="#menu">Menu</a>
+        <a href="#reservation">Reservation</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+
+        <div class="menu-item">
+            <img src="./src/asset/burger.jpg" alt="Burger">
+            <div>
+                <h3>Classic Cheeseburger</h3>
+                <p>A juicy beef patty with melted cheese, lettuce, and tomato.</p>
+            </div>
+            <span class="price">$8.99</span>
+        </div>
+
+        <div class="menu-item">
+            <img src="./src/asset/piza.jpg" alt="Pizza">
+            <div>
+                <h3>Margherita Pizza</h3>
+                <p>Classic Italian pizza with fresh tomatoes, mozzarella, and basil.</p>
+            </div>
+            <span class="price">$12.99</span>
+        </div>
+
+        <div class="menu-item">
+            <img src="./src/asset/pasta.jpg" alt="Pasta">
+            <div>
+                <h3>Spaghetti Carbonara</h3>
+                <p>Spaghetti with a creamy parmesan sauce, bacon, and egg.</p>
+            </div>
+            <span class="price">$10.99</span>
+        </div>
+
+        <div class="menu-item">
+            <img src="./src/asset/dessert.jpg" alt="Dessert">
+            <div>
+                <h3>Chocolate Lava Cake</h3>
+                <p>Warm chocolate cake with a gooey molten center.</p>
+            </div>
+            <span class="price">$6.99</span>
+        </div>
+    </section>
+
+    <section id="reservation" class="reservation">
+        <h2>Make a Reservation</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="message">Special Requests:</label>
+            <textarea id="message" rows="3" placeholder="Any special requests?"></textarea>
+
+            <button type="submit">Reserve Now</button>
+        </form>
+    </section>
+
+    <footer id="contact" style="background-color: rgba(51, 51, 51, 0.9); color: white; padding: 20px; margin-top: 20px;">
+        <p> Address: 123 Food Street, Pizza Town</p>
+        <p> Contact: (123) 456-7890</p>
+        <p> Email: srn@deliciousbites.com</p>
+    </footer>
+
+</body>
+</html>
