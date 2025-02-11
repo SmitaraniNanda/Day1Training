@@ -1,4 +1,10 @@
-img{
-    height:100px;
+img {
+    height: 100px;
     width: 100px;
+    position: relative; /* or absolute */
+    z-index: 600;
+}
+.center-box img {
+    position: relative;
+    z-index: 600;
 }
