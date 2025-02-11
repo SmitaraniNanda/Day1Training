@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Features</title>
+    <link rel="stylesheet" href="../CSS/Day6.css">
+    <style>
+        /* Sticky Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        /* Centering an element */
+        .center-box {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 20px;
+            z-index: 500;
+        }
+
+        /* Box with padding, border, and margin */
+        .box {
+            width: 300px;
+            height: 150px;
+            background: lightcoral;
+            border: 3px solid darkred;
+            padding: 20px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <div class="navbar">Sticky Navigation Bar</div>
+
+    <!-- Box with padding, border, and margin -->
+    <div class="box"><img src="./assets/Day6.jpg" alt="Day6">This is a Box</div>
+    
+
+    <!-- Centered Element -->
+    <div class="center-box"><img src="./assets/butterfly.jpg" alt="butterfly">Centered Box</div>
+    
+</body>
+</html>
