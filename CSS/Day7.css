@@ -1,13 +1,9 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Layout Container */
-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -15,106 +11,83 @@ body {
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #333;
+    background-color: #333;
     color: white;
-    padding: 15px 20px;
-}
-
-/* Navigation */
-nav {
-    display: flex;
-    align-items: center;
+    padding: 15px 0;
+    text-align: center;
 }
 
 .nav-links {
     list-style: none;
+    padding: 0;
     display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .nav-links li {
-    margin: 0 15px;
+    display: inline;
 }
 
 .nav-links a {
-    color: white;
     text-decoration: none;
+    color: white;
     font-size: 18px;
 }
 
 /* Main Content */
 main {
     flex: 1;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 20px;
 }
 
-/* Photo Gallery */
+/* Content Section */
+.content {
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* Gallery Section */
 .gallery {
-    width: 80%;
-    margin-top: 30px;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .photo-grid {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .photo {
-    width: 30%;
-    height: 150px;
-    background: #555;
+    width: 200px;
+    height: 250px;
+    background-color: #eee;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 24px;
-    color: white;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #444;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        text-align: center;
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .photo {
-        width: 45%;
-    }
-}
-
-@media (max-width: 480px) {
-    .photo {
-        width: 100%;
-    }
+    padding: 10px 0;
+    width: 100%;
 }

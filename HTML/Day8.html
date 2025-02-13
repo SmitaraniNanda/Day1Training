@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Grid Layout with Navbar</title>
+    <link rel="stylesheet" href="../CSS/Day8.css">
+    <style>
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            padding: 14px 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 50px;
+            background-color: brown;
+            padding: 100px;
+            margin-top: 20px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(252, 255, 240, 0.7);
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            border-radius: 10px;
+        }
+
+        .item1 {
+            grid-column: 1/4; /* Spanning across 3 columns */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Day8 Task</a>
+    </div>
+
+    <section class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="photo-grid">
+            <div class="photo"><img src="./assets/profile.avif" alt="profile">1</div>
+            <div class="photo"><img src="./assets/profile.avif" alt="profile">2</div>
+            <div class="photo"><img src="./assets/profile.avif" alt="profile">3</div>
+        </div>
+    </section>
+
+    <h1 style="text-align: center; margin-top: 20px;">The Grid-column Property</h1>
+
+    <!-- Grid Layout -->
+    <div class="grid-container">
+        <div class="item1">Session 1</div>
+        <div class="item2">Session 2</div>
+        <div class="item3">Session 3</div>
+        <div class="item4">Session 4</div>
+    </div>
+
+</body>
+</html>
