@@ -26,6 +26,7 @@ console.log("Converted string to number:", strToNum);
 console.log("Converted number to string:", numToStr);
 console.log("Converted boolean to string:", boolToStr);
 
+
 // Calculate the area of a rectangle
 function calculateArea() {
     let length = parseFloat(document.getElementById("length").value);
