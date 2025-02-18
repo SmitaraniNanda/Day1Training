@@ -1,31 +1,30 @@
 // Function to check if a number is even or odd
 function checkEvenOdd(num) {
+    num = parseInt(num);
+    if (isNaN(num)) return "Please enter a valid number";
     return num % 2 === 0 ? "Even" : "Odd";
 }
 
 // Function to display the multiplication table of a given number
 function multiplicationTable(num) {
+    num = parseInt(num);
+    if (isNaN(num)) return "Please enter a valid number";
+
     let table = "";
     for (let i = 1; i <= 10; i++) {
-        table += `${num} x ${i} = ${num * i}<br>`;
+        table += `${num} × ${i} = ${num * i}<br>`;
     }
     return table;
 }
 
 // Function to display the day of the week based on user input
 function getDayOfWeek(dayNumber) {
-    let day;
-    switch (parseInt(dayNumber)) {
-        case 1: day = "Sunday"; break;
-        case 2: day = "Monday"; break;
-        case 3: day = "Tuesday"; break;
-        case 4: day = "Wednesday"; break;
-        case 5: day = "Thursday"; break;
-        case 6: day = "Friday"; break;
-        case 7: day = "Saturday"; break;
-        default: day = "Invalid day number";
-    }
-    return day;
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    dayNumber = parseInt(dayNumber);
+    
+    if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 7) return "Invalid day number";
+    
+    return days[dayNumber - 1];
 }
 
 // Function to find the sum of the first 10 natural numbers
@@ -39,6 +38,9 @@ function sumOfFirst10NaturalNumbers() {
 
 // Function to reverse a string using a loop
 function reverseString(str) {
+    str = str.trim();
+    if (str === "") return "Please enter a valid string";
+
     let reversed = "";
     for (let i = str.length - 1; i >= 0; i--) {
         reversed += str[i];
@@ -49,26 +51,26 @@ function reverseString(str) {
 // Event listeners for the HTML buttons
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("checkEvenOddBtn").addEventListener("click", function () {
-        let num = document.getElementById("numberInput").value;
-        document.getElementById("evenOddResult").innerHTML = checkEvenOdd(num);
+        const num = document.getElementById("numberInput").value;
+        document.getElementById("evenOddResult").innerText = checkEvenOdd(num);
     });
 
     document.getElementById("multiplicationTableBtn").addEventListener("click", function () {
-        let num = document.getElementById("multiplicationInput").value;
+        const num = document.getElementById("multiplicationInput").value;
         document.getElementById("multiplicationResult").innerHTML = multiplicationTable(num);
     });
 
     document.getElementById("dayOfWeekBtn").addEventListener("click", function () {
-        let dayNum = document.getElementById("dayInput").value;
-        document.getElementById("dayResult").innerHTML = getDayOfWeek(dayNum);
+        const dayNum = document.getElementById("dayInput").value;
+        document.getElementById("dayResult").innerText = getDayOfWeek(dayNum);
     });
 
     document.getElementById("sumBtn").addEventListener("click", function () {
-        document.getElementById("sumResult").innerHTML = sumOfFirst10NaturalNumbers();
+        document.getElementById("sumResult").innerText = sumOfFirst10NaturalNumbers();
     });
 
     document.getElementById("reverseStringBtn").addEventListener("click", function () {
-        let str = document.getElementById("stringInput").value;
-        document.getElementById("reverseResult").innerHTML = reverseString(str);
+        const str = document.getElementById("stringInput").value;
+        document.getElementById("reverseResult").innerText = reverseString(str);
     });
 });
