@@ -12,7 +12,7 @@ function multiplicationTable(num) {
 
     let table = "";
     for (let i = 1; i <= 10; i++) {
-        table += `${num} × ${i} = ${num * i}<br>`;
+        table += `${num} * ${i} = ${num * i}<br>`;
     }
     return table;
 }
