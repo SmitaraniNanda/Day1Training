@@ -46,7 +46,6 @@ function getDayOfWeek(dayNumber) {
 
 }
 
-
 // Function to find the sum of the first 10 natural numbers
 function sumOfFirst10NaturalNumbers() {
     let sum = 0;
@@ -67,3 +66,31 @@ function reverseString(str) {
     }
     return reversed;
 }
+
+// Event listeners for the HTML buttons
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("checkEvenOddBtn").addEventListener("click", function () {
+        const num = document.getElementById("numberInput").value;
+        document.getElementById("evenOddResult").innerText = checkEvenOdd(num);
+    });
+
+    document.getElementById("multiplicationTableBtn").addEventListener("click", function () {
+        const num = document.getElementById("multiplicationInput").value;
+        document.getElementById("multiplicationResult").innerHTML = multiplicationTable(num);
+    });
+
+    document.getElementById("dayOfWeekBtn").addEventListener("click", function () {
+        const dayNum = document.getElementById("dayInput").value;
+        document.getElementById("dayResult").innerText = getDayOfWeek(dayNum);
+    });
+
+    document.getElementById("sumBtn").addEventListener("click", function () {
+        document.getElementById("sumResult").innerText = sumOfFirst10NaturalNumbers();
+    });
+
+    document.getElementById("reverseStringBtn").addEventListener("click", function () {
+        const str = document.getElementById("stringInput").value;
+        document.getElementById("reverseResult").innerText = reverseString(str);
+    });
+});
+
