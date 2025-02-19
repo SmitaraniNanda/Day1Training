@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Programs</title>
+    <title>Utility Functions</title>
     <script src="../Script/Day11.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
-        input, button { margin: 5px; padding: 8px; font-size: 16px; }
-        p { font-weight: bold; color: #333; }
-    </style>
 </head>
 <body>
+
     <h2>Check Even or Odd</h2>
-    <input type="number" id="numberInput" placeholder="Enter a number">
-    <button id="checkEvenOddBtn">Check</button>
+    <input type="text" id="numberInput">
+    <button  id="checkEvenOddBtn">Check</button>
     <p id="evenOddResult"></p>
 
     <h2>Multiplication Table</h2>
-    <input type="number" id="multiplicationInput" placeholder="Enter a number">
-    <button id="multiplicationTableBtn">Generate</button>
-    <p id="multiplicationResult"></p>
+    <input type="text" id="multiplicationInput">
+    <button  id="multiplicationTableBtn">Generate Table</button>
+    <pre id="multiplicationResult"></pre>
 
     <h2>Day of the Week</h2>
-    <input type="number" id="dayInput" placeholder="Enter day number (1-7)">
+    <input type="text" id="dayInput">
     <button id="dayOfWeekBtn">Get Day</button>
     <p id="dayResult"></p>
 
@@ -31,11 +27,11 @@
     <button id="sumBtn">Calculate Sum</button>
     <p id="sumResult"></p>
 
-    <h2>Reverse a String</h2>
-    <input type="text" id="stringInput" placeholder="Enter a string">
+    <h2>Reverse String</h2>
+    <input type="text" id="stringInput">
     <button id="reverseStringBtn">Reverse</button>
     <p id="reverseResult"></p>
 
-   
+    
 </body>
 </html>
