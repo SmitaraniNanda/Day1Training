@@ -9,6 +9,6 @@ const findMax = (arr) => Math.max(...arr);
 
 // to execute the functions immediately
 (function () {
-    console.log("Factorial of 5:", factorial(5)); // Output: 120
-    console.log("Largest element in [3, 7, 2, 9, 5]:", findMax([3, 7, 2, 9, 5])); // Output: 9
+    console.log("Factorial of 6:", factorial(6)); // Output: 720
+    console.log("Largest element in [3, 7, 2, 9, 5]:", findMax([10, 7, 2, 9, 5])); // Output: 10
 })();
