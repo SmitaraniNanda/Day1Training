@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Elements</title>
+    <link rel="stylesheet" href="../CSS/Day14.css">
+    <script defer src="../Script/Day14.js"></script>
+</head>
+<body>
+    <h1>Interactive Web Elements</h1>
+    
+    <button id="colorBtn">Change Background Color</button>
+    <button id="showModal">Show Modal</button>
+    
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+        <p>This is a modal popup!</p>
+        <button id="closeModal">Close</button>
+    </div>
+    
+    <h2>Dynamic List</h2>
+    <ul id="itemList"></ul>
+    <button id="addItem">Add Item</button>
+    
+    <h2>Form Validation</h2>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="error" style="color: red;"></p>
+</body>
+</html>
