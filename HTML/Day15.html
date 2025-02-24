@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery Demo</title>
+    <script src="../Jquery/jquery-3.7.1.js"></script>
+    <style>
+        .highlight {
+            color: white;
+            background-color: blue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <button id="hideBtn">Hide Text</button>
+    <button id="showBtn">Show Text</button>
+    <p id="text">This text can be hidden or shown.</p>
+
+    <hr>
+
+
+    <p class="styled">This paragraph will have CSS applied.</p>
+    <button id="applyStyle">Apply Style</button>
+
+    <hr>
+
+  
+    <p id="toggleClassText">Click the button to add/remove a class.</p>
+    <button id="toggleClass">Toggle Class</button>
+
+    <hr>
+
+
+    <button id="toggleImage">Toggle Image</button>
+    <img id="myImage" src="../HTML/assets/background.jpg" alt="Sample Image">
+
+    <hr>
+
+    
+    <p id="changeText">Original text.</p>
+    <button id="changeTextBtn">Change Text</button>
+
+    <script>
+        $(document).ready(function() {
+            // 1) Hide and Show Elements
+            $("#hideBtn").click(function() {
+                $("#text").hide();
+            });
+
+            $("#showBtn").click(function() {
+                $("#text").show();
+            });
+
+            // 2) Select elements by class and ID, apply CSS styles
+            $("#applyStyle").click(function() {
+                $(".styled").css({
+                    "color": "red",
+                    "font-weight": "bold",
+                    "font-size": "18px"
+                });
+            });
+
+            // 3) Use .addClass() and .removeClass()
+            $("#toggleClass").click(function() {
+                $("#toggleClassText").toggleClass("highlight");
+            });
+
+            // 4) Toggle Image Visibility
+            $("#toggleImage").click(function() {
+                $("#myImage").toggle();
+            });
+
+            // 5) Change text dynamically
+            $("#changeTextBtn").click(function() {
+                $("#changeText").text("The text has been changed!");
+            });
+        });
+    </script>
+
+</body>
+</html>
