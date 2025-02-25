@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects Demo</title>
+    <script src="../Jquery/jquery-3.7.1.js"></script>
+    <style>
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; background: #3498db; color: black; margin: 5px; cursor: pointer; }
+        li:hover { background: #2980b9; }
+        #box { width: 200px; height: 100px; background: tomato; margin-top: 10px; }
+        #animated-box { width: 100px; height: 100px; background: green; position: absolute; top: 50px; left: 50px; }
+        #carousel { width: 300px; overflow: hidden; position: relative; }
+        #carousel img { width: 300px; height: 200px; display: none; }
+        #carousel img:first-child { display: block; }
+    </style>
+</head>
+<body>
+    <h2>1. Hover Effect Menu</h2>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    
+    <h2>2. Fade-in and Fade-out Image</h2>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <img id="image" src="../HTML/assets/Day16.jpg" style="display:none; margin-top: 10px;">
+    
+    <h2>3. Slide Up & Down</h2>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+    <div id="box"></div>
+    
+    <h2>4. Custom Animation</h2>
+    <button id="animate">Animate</button>
+    <div id="animated-box"></div>
+    
+    <h2>5. Image Carousel</h2>
+    <div id="carousel">
+        <img src="../HTML/assets/Day16.jpg" alt="Image 1">
+        <img src="../HTML/assets/Day16.jpg" alt="Image 2">
+        <img src="../HTML/assets/Day16.jpg" alt="Image 3">
+    </div>
+    <button id="next">Next</button>
+
+    <script>
+        $(document).ready(function(){
+            // Hover Effect
+            $("#menu li").hover(
+                function() { $(this).css("background", "pink"); },
+                function() { $(this).css("background", "yellow"); }
+            );
+            
+            // Fade In & Out
+            $("#fadeIn").click(function(){ $("#image").fadeIn(1000); });
+            $("#fadeOut").click(function(){ $("#image").fadeOut(1000); });
+            
+            // Slide Up & Down
+            $("#slideUp").click(function(){ $("#box").slideUp(1000); });
+            $("#slideDown").click(function(){ $("#box").slideDown(1000); });
+            
+            // Custom Animation
+            $("#animate").click(function(){
+                $("#animated-box").animate({
+                    left: '250px',
+                    width: '200px',
+                    height: '200px',
+                    opacity: '0.5'
+                }, 1000);
+            });
+            
+            // Carousel Effect
+            let images = $("#carousel img");
+            let index = 0;
+            $("#next").click(function(){
+                images.eq(index).fadeOut(500, function(){
+                    index = (index + 1) % images.length;
+                    images.eq(index).fadeIn(500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
