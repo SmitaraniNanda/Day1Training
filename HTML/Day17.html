@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM Manipulation</title>
+    <script src="../Jquery/jquery-3.7.1.js"></script>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; text-align: left; }
+        .highlight { background-color: white; }
+    </style>
+</head>
+<body>
+    <h2>Modify Child Elements of a List</h2>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="modifyList">Modify List Items</button>
+    
+    <h2>Clone and Append Elements</h2>
+    <button id="cloneItem">Clone and Append</button>
+    
+    <h2>Dynamically Add/Remove List Items</h2>
+    <button id="addItem">Add Item</button>
+    <button id="removeItem">Remove Item</button>
+    
+    <h2>Highlight Even Rows in a Table</h2>
+    <table id="myTable">
+        <tr><td>Row 1</td></tr>
+        <tr><td>Row 2</td></tr>
+        <tr><td>Row 3</td></tr>
+        <tr><td>Row 4</td></tr>
+    </table>
+    <button id="highlightRows">Highlight Even Rows</button>
+    
+    <script>
+        $(document).ready(function() {
+            // Modify child elements of a list
+            $("#modifyList").click(function() {
+                $("#myList").children("li").each(function(index) {
+                    $(this).text("Modified Item " + (index + 1));
+                });
+            });
+            
+            // Clone and append elements
+            $("#cloneItem").click(function() {
+                let clonedItem = $("#myList li:first").clone();
+                $("#myList").append(clonedItem);
+            });
+            
+            // Dynamically add/remove list items
+            $("#addItem").click(function() {
+                $("#myList").append("<li>New Item</li>");
+            });
+            
+            $("#removeItem").click(function() {
+                $("#myList li:last").remove();
+            });
+            
+            // Highlight even rows in a table
+            $("#highlightRows").click(function() {
+                $("#myTable tr:even").addClass("highlight");
+            });
+        });
+    </script>
+</body>
+</html>
