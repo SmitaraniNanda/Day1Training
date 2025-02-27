@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example with jQuery</title>
+    <script src="../Jquery/jquery-3.7.1.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #data-container { margin-top: 20px; }
+        .spinner { display: none; width: 50px; height: 50px; border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Fetch Public API Data</h2>
+    <button id="fetch-data">Fetch Data</button>
+    <div class="spinner"></div>
+    <div id="data-container"></div>
+
+    <h2>Submit Form using AJAX</h2>
+    <form id="myForm">
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="form-response"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Fetch Data from API
+            $("#fetch-data").click(function () {
+                $(".spinner").show();
+                $("#data-container").html(""); // Clear previous data
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/posts",
+                    method: "GET",
+                    success: function (data) {
+                        $(".spinner").hide();
+                        let output = "<ul>";
+                        data.slice(0, 5).forEach(item => {
+                            output += `<li><strong>${item.title}</strong>: ${item.body}</li>`;
+                        });
+                        output += "</ul>";
+                        $("#data-container").html(output);
+                    },
+                    error: function (xhr) {
+                        $(".spinner").hide();
+                        handleAjaxError(xhr);
+                    }
+                });
+            });
+
+            // Submit Form using AJAX
+            $("#myForm").submit(function (event) {
+                event.preventDefault(); // Prevent normal form submission
+                let formData = {
+                    name: $("#name").val(),
+                    email: $("#email").val()
+                };
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/posts",
+                    method: "POST",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (response) {
+                        $("#form-response").html("<p style='color: green;'>Form submitted successfully!</p>");
+                    },
+                    error: function (xhr) {
+                        handleAjaxError(xhr);
+                    }
+                });
+            });
+
+            // Handle AJAX Errors
+            function handleAjaxError(xhr) {
+                let errorMessage = "An error occurred.";
+                if (xhr.status === 403) {
+                    errorMessage = "Error 403: Forbidden!";
+                } else if (xhr.status === 500) {
+                    errorMessage = "Error 500: Internal Server Error!";
+                }
+                $("#data-container").html(`<p class='error'>${errorMessage}</p>`);
+                $("#form-response").html(`<p class='error'>${errorMessage}</p>`);
+            }
+        });
+    </script>
+
+</body>
+</html>
