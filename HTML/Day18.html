@@ -52,39 +52,6 @@
                     }
                 });
             });
-
-            // Submit Form using AJAX
-            $("#myForm").submit(function (event) {
-                event.preventDefault(); // Prevent normal form submission
-                let formData = {
-                    name: $("#name").val(),
-                    email: $("#email").val()
-                };
-                $.ajax({
-                    url: "https://jsonplaceholder.typicode.com/posts",
-                    method: "POST",
-                    data: JSON.stringify(formData),
-                    contentType: "application/json",
-                    success: function (response) {
-                        $("#form-response").html("<p style='color: green;'>Form submitted successfully!</p>");
-                    },
-                    error: function (xhr) {
-                        handleAjaxError(xhr);
-                    }
-                });
-            });
-
-            // Handle AJAX Errors
-            function handleAjaxError(xhr) {
-                let errorMessage = "An error occurred.";
-                if (xhr.status === 403) {
-                    errorMessage = "Error 403: Forbidden!";
-                } else if (xhr.status === 500) {
-                    errorMessage = "Error 500: Internal Server Error!";
-                }
-                $("#data-container").html(`<p class='error'>${errorMessage}</p>`);
-                $("#form-response").html(`<p class='error'>${errorMessage}</p>`);
-            }
         });
     </script>
 
