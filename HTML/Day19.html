@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery Plugins Demo</title>
-    
+
     <!-- jQuery and jQuery UI -->
     <script src="../Jquery/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  
- 
+
+
     <style>
-        
-        .slider { max-width: 600px; margin: auto; }
+        .slider {
+            max-width: 600px;
+            margin: auto;
+        }
     </style>
 </head>
+
 <body>
     <h2>jQuery Plugins Demo</h2>
-    
+
     <!-- Date Picker -->
     <label for="datepicker">Select a Date:</label>
     <input type="text" id="datepicker">
-    
-   
-    
+
+
+
     <!-- Image Carousel -->
     <div class="slider">
         <div><img src="../HTML/assets/Day16.jpg" alt="Image 1"></div>
         <div><img src="../HTML/assets/Day16.jpg" alt="Image 2"></div>
         <div><img src="../HTML/assets/Day16.jpg" alt="Image 3"></div>
     </div>
-    
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Initialize Date Picker
             $("#datepicker").datepicker({
                 dateFormat: "dd-mm-yy",
@@ -43,4 +47,5 @@
         });
     </script>
 </body>
+
 </html>
