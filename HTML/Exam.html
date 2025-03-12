@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+    <script src="../Jquery/jquery-3.7.1.js"></script>
+    <style>
+        body {
+            font-family:Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeColor">Change Background Color</button>
+    <button id="loadUsers">Load Users</button>
+    
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // Change background color on button click
+            $("#changeColor").click(function() {
+                const colors = ["blue", "red", "pink", "yellow", "white"];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                $("body").css("background-color", randomColor);
+            });
+
+            // Load users dynamically on button click
+            $("#loadUsers").click(function() {
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/users",
+                    method: "GET",
+                    success: function(users) {
+                        let tableBody = "";
+                        users.forEach(user => {
+                            tableBody += `<tr><td>${user.username}</td><td>${user.email}</td></tr>`;
+                        });
+                        $("#userTable tbody").html(tableBody);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
